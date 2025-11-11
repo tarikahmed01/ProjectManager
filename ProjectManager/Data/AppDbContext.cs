@@ -1,0 +1,15 @@
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using ProjectManager.Models;
+
+namespace ProjectManager.Data
+{
+    public class AppDbContext : IdentityDbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options) { }
+
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<TaskItem> TaskItems { get; set; }
+    }
+}
